@@ -15,12 +15,15 @@ const NewExpense = (props) => {
             id: Math.random().toString()
         };
         props.onAddExpense(expenseData);
+        setFormVisivility(false);
     };
 
     return (
         <div className="new-expense">
             {!isFormVisible ? <button onClick={showForm}>Add New Expense</button> :
-                <ExpenseForm onShowForm={showForm} onSaveExpenseData={saveExpenseDataHandler} />}
+                <ExpenseForm 
+                onShowForm={showForm} 
+                onSaveExpenseData={saveExpenseDataHandler} />}
         </div>
     );
 };
